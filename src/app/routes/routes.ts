@@ -16,6 +16,10 @@ const all_routes = [
     path: '/contacts',
     route: handler.contacts_handler,
   },
+  {
+    path: '/blogs',
+    route: handler.blogs_handler,
+  },
 ];
 
 all_routes.forEach((route) => router.use(route.path, route.route));
