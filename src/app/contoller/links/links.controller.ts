@@ -1,4 +1,4 @@
-import { sendresponse } from '../utils/sendres';
+import { sendresponse } from '../../utils/sendres';
 import Links from './links.model';
 
 const get_links = async (req: any, res: any, next: any) => {
