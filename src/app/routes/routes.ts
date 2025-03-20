@@ -1,12 +1,12 @@
 import { Router } from 'express';
-import { CheckHealthRoutes } from './modules/HealthCheck';
+import handler from './handlers';
 
 const router = Router();
 
 const all_routes = [
   {
-    path: '/',
-    route: CheckHealthRoutes,
+    path: '/links',
+    route: handler.linkshandler,
   },
 ];
 

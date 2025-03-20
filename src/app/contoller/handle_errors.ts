@@ -1,11 +1,3 @@
-const checkhealth = (req: any, res: any) => {
-  res.send({
-    status: 200,
-    message: 'Server working fine',
-    working: true,
-  });
-};
-
 const handle_errors = (err: any, req: any, res: any, next: any) => {
   res.status(err.status || 500).send({
     working: false,
@@ -23,4 +15,4 @@ const invalid_routes = (req: any, res: any, next: any) => {
   });
 };
 
-export { checkhealth, handle_errors, invalid_routes };
+export { handle_errors, invalid_routes };
