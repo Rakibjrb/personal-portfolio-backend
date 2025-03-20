@@ -1,9 +1,14 @@
+import mongoose from 'mongoose';
 import { app } from './app';
+import config from './config/config';
 
-const main = () => {
+const main = async () => {
   try {
-    app.listen(5000, () => {
-      console.log(`server listen on : http://localhost:${5000}`);
+    console.log('connecting db ...');
+    await mongoose.connect(config.db as string);
+    console.log('connected ...');
+    app.listen(config.port, () => {
+      console.log(`server listen on : http://localhost:${config.port}`);
     });
   } catch (error) {
     console.log(error);
