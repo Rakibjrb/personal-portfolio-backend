@@ -12,6 +12,10 @@ const all_routes = [
     path: '/projects',
     route: handler.projects_handlers,
   },
+  {
+    path: '/contacts',
+    route: handler.contacts_handler,
+  },
 ];
 
 all_routes.forEach((route) => router.use(route.path, route.route));

@@ -7,4 +7,7 @@ export default {
   origin: process.env.ORIGIN,
   dbname: process.env.DB_NAME,
   sitetoken: process.env.SITE_TOKEN,
+  smtp_user: process.env.SMTP_USER,
+  send_me: process.env.SEND_ME,
+  smtp_pass: process.env.SMTP_PASS,
 };
