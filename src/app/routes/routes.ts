@@ -20,6 +20,10 @@ const all_routes = [
     path: '/blogs',
     route: handler.blogs_handler,
   },
+  {
+    path: '/admin',
+    route: handler.admin_handler,
+  },
 ];
 
 all_routes.forEach((route) => router.use(route.path, route.route));

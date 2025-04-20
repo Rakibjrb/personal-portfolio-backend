@@ -7,14 +7,14 @@ const verify_frontend = (req: any, res: any, next: any) => {
     const bearer = req.headers.authorization;
     const token = bearer.split(' ')[1];
 
-    bcrypt.compare(config.sitetoken as string, token, (err, isMatch) => {
+    bcrypt.compare(token, config.sitetoken as string, (err, isMatch) => {
       if (err) {
         return sendresponse(res, 401, 'error on decode');
       }
       if (isMatch) {
         return next();
       }
-      sendresponse(res, 403, 'forbidden access');
+      sendresponse(res, 403, 'something went wrong');
     });
   } catch (error) {
     sendresponse(res, 404, 'something went wrong');
