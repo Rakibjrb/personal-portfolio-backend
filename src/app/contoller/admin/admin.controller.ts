@@ -20,9 +20,11 @@ const adminLogin = (req: any, res: any, next: any) => {
           return sendresponse(res, 401, 'error on decode');
         }
         if (isMatch) {
-          return sendresponse(res, 201, { token: loginToken(credentials) });
+          return res
+            .status(200)
+            .send({ login: true, token: loginToken(credentials) });
         }
-        sendresponse(res, 403, 'something went wrong');
+        return res.status(200).send({ login: false, token: null });
       },
     );
   } catch (error) {
