@@ -10,13 +10,13 @@ import {
 } from './projects.controller';
 const route = Router();
 
-route.get('/latest', verify_frontend, get_latest_projects);
-route.get('/project/:id', verify_frontend, get_project_by_id);
-route.get('/category/:category', verify_frontend, get_projects_by_category);
+route.get('/latest', get_latest_projects);
+route.get('/project/:id', get_project_by_id);
+route.get('/category/:category', get_projects_by_category);
 
 //route for admin
-route.post('/post', verify_frontend, post_project);
-route.put('/like/:id', verify_frontend, like_project);
-route.put('/project-type/:id', verify_frontend, change_project_type);
+route.post('/post', post_project);
+route.put('/like/:id', like_project);
+route.put('/project-type/:id', change_project_type);
 
 export const projects_handlers = route;
