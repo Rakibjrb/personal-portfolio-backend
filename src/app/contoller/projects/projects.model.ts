@@ -14,7 +14,6 @@ const projects_schema = new Schema(
     live_link: { type: String, required: true },
     client_code: { type: String, required: true },
     server_code: { type: String, required: true },
-    date: { type: String, required: true },
   },
   { timestamps: true },
 );

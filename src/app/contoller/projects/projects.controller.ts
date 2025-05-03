@@ -57,7 +57,7 @@ const get_projects_by_category = async (req: any, res: any, next: any) => {
 
 const post_project = async (req: any, res: any, next: any) => {
   try {
-    const data = req.data;
+    const data = req.body;
     const uploaded = await Projects.create(data);
     sendresponse(res, 201, uploaded);
   } catch (error) {
