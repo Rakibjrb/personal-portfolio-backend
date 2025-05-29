@@ -5,9 +5,9 @@ import Contacts from './contacts.model';
 const post_contact = async (req: any, res: any, next: any) => {
   try {
     const contact_data = req.body;
-    await Contacts.create(contact_data);
-    sendresponse(res, 201, contact_data);
+    await Contacts.create({ ...contact_data, status: 'unread' });
     send_mail(contact_data);
+    sendresponse(res, 201, contact_data);
   } catch (error) {
     next(error);
   }
