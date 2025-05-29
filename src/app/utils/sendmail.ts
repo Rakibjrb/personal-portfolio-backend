@@ -14,7 +14,7 @@ const transporter = nodemailer.createTransport({
   service: 'gmail',
   host: 'smtp.gmail.com',
   port: 465,
-  secure: true,
+  secure: false,
   auth: {
     user: config.smtp_user as string,
     pass: config.smtp_pass as string,
@@ -24,8 +24,8 @@ const transporter = nodemailer.createTransport({
 const send_mail = async (user: User) => {
   // send a email to me
   await transporter.sendMail({
-    from: config.smtp_user,
-    to: config.send_me,
+    from: config.smtp_user as string,
+    to: config.send_me as string,
     subject: user.subject,
     html: `<div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
             <h1 style="color: #4CAF50;">New Contact Request</h1>
