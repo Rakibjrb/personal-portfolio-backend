@@ -9,16 +9,6 @@ const blog_Schema = new Schema(
       published_date: { type: String, required: true },
     },
     thumbnail_image: { type: String, required: true },
-    like: { type: Number },
-    comments: [
-      {
-        commenter: {
-          name: { type: String },
-          comment: { type: String },
-          published_date: { type: String },
-        },
-      },
-    ],
     type: { type: String },
   },
   { timestamps: true },
