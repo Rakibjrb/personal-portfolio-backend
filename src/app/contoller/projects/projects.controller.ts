@@ -5,7 +5,7 @@ const get_latest_projects = async (req: any, res: any, next: any) => {
   try {
     const latest_projects = await Projects.find(
       { type: 'latest' },
-      '_id image project_name',
+      '_id image project_name type category',
     ).sort({
       date: -1,
     });
@@ -30,7 +30,10 @@ const get_projects_by_category = async (req: any, res: any, next: any) => {
   try {
     const category = req.params.category;
     if (category === 'all') {
-      const projects = await Projects.find({}, '_id image project_name').sort({
+      const projects = await Projects.find(
+        {},
+        '_id image project_name type category',
+      ).sort({
         date: -1,
       });
       sendresponse(res, 200, projects);
@@ -42,7 +45,7 @@ const get_projects_by_category = async (req: any, res: any, next: any) => {
     ) {
       const projects = await Projects.find(
         { category },
-        '_id image project_name',
+        '_id image project_name type category',
       ).sort({
         date: -1,
       });

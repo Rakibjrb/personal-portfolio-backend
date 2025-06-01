@@ -4,8 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start:prod": "node ./dist/server.js",
-    "start:dev": "npx ts-node-dev --respawn --transpile-only src/server.ts",
+    "start": "node ./dist/server.js",
+    "dev": "npx ts-node-dev --respawn --transpile-only src/server.ts",
     "lint": "eslint src --ext .ts",
     "build": "tsc",
     "lint:fix": " npx eslint src --fix",
