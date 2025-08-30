@@ -44,6 +44,7 @@ const send_mail = async (user: User) => {
     html: `<div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
             <h1 style="color: #4CAF50;">New Contact Request From Portfolio</h1>
             <p><strong>Name :</strong> ${user.name || 'Unknown'}</p>
+            <p><strong>Subject :</strong> ${user.subject || 'No Subject'}</p>
             <p><strong>Email Address : </strong>${user.email}</p>
             <p style="background: #f4f4f4; padding: 10px; border-left: 5px solid #4CAF50;">Message : ${user.message}</p>
             <hr>
